@@ -1,18 +1,37 @@
 #Java2word#
 
-Coding for fun - it has to be enjoyable.
+
 The missing library to generate MS Word Documents from Java code without any special components.
 
-** When I say no third part or external libraries, I mean there isn't any Microsoft library or special components. Please refer to "Dependencies" section below.*
+_Coding for fun - it has to be enjoyable._
+
+
+_* When I say no third part or external libraries, I mean there isn't any Microsoft library or special components. Please refer to "Dependencies" section below._
 
 
 ##WHEN TO USE JAVA2WORD##
 
-Suitable when you have that particular clients/customers who want to export huge reports to Microsoft Word and make changes easily. Or when you have a "Release Notes" document as a part of the build.
+Suitable when you have that particular clients/customers/project where you want to export or create MS Word reports and make changes easily. Another situation is to generate "Release Notes" document as a part of the build.
 
-Or if you need to create Word Document Reports (data coming from a database).
+If you need to create MS Word document that looks like a reports and data comes from a database, this is the perfect library for it.
 
-You can utilize the following elements:
+You could use it in a web or non-web application.
+
+
+##Just a quick taste of java2word##
+
+```
+IDocument myDoc = new Document2004();
+myDoc.addEle(Heading1.with("Heading01").create());
+myDoc.addEle(BreakLine.times(2).create()); //two break lines
+myDoc.addEle(Paragraph.with("This document is an example of paragraph").create());
+
+//then get the XML representation of the MS Word document
+String myWord = myDoc.getContent(); 
+```
+
+
+##You can utilize the following elements:##
 
 * Cover page with images or text
 * Table of content based on Document Headings *
@@ -22,19 +41,18 @@ You can utilize the following elements:
 * Paragraphs
 * Page break
 * Table with data coming from your database queries
-And the end user might want to edit this document.
 
 
-**Believe me**: We first implemented this using Jasper Reports and the final result was a just horrible. We created about 20 little reports, put all together as sub-reports, export them to RTF and opened it in MS Word. The RTF file had 5 MB and after saving as .DOC, file had 40MB!
+**Believe me**: We first implemented this using Jasper Reports and the final result wasn't great. We created about 20 little reports, put all together as sub-reports, export them to RTF and opened it in MS Word. The RTF file had 5 MB and after saving as .DOC, file jumped to 40MB!
 
 Jasper generates some dodge tables which are really annoying to edit their content.
 
-It is so painful to implement this in Jasper. In addition to that, it demands a lot of manual work to put them together and you also have to manually convert to MS Word. I know it sounds very inefficient because it is!
+It is so painful to implement this in Jasper. In addition to that, it requires a lot of manual work to put them together and you also have to manually convert to MS Word.
 
 
 ##WHEN TO NOT USE##
 
-Fancy word documents with rich format/style.
+* Too fancy word documents with rich format/style.
 
 
 
@@ -51,15 +69,18 @@ myDoc.addEle(new Image("http://your_web_app/images/logo1w.png", ImageLocation.WE
 
 
 myDoc.addEle(new BreakLine(2)); //two break lines
-    
+```
+
 Then:
 
-         
+```         
 String myWord = myDoc.getContent();
-    
+```
+
+
 Now you can add this to your ServletResponse:
 
-     
+```     
 PrintWriter writer = servletResponse.getWriter();
 writer.println(myWord);    
     
@@ -67,7 +88,7 @@ Then you will have your Microsoft Word document ready to be downloaded!
 
 For non-web applications, you could create a local file:
 
- File fileObj = new File("/home/leonardo/Desktop/Java2word_allInOne.doc");
+File fileObj = new File("/home/leonardo/Desktop/Java2word_allInOne.doc");
 
 PrintWriter writer = null;
 try {
@@ -80,8 +101,10 @@ String myWord = myDoc.getContent();
 writer.println(myWord);
 writer.close();            
     
-Take a look at the example projects in order to have an idea about how to use it in a real world application.
-```
+```    
+
+Take a look at the example projects to have a better understanding how to use it in a real world application.
+
 
 
 ##HOW TO GETTHE SERVLETRESPONSE REFERENCE##
@@ -164,33 +187,33 @@ public class reportCreator {
     
 ##DEPENDENCIES##
 
-xstream-1.3.1.jar : if you use Image component in your doc (needed for Base64 encoding). 
+* xstream-1.3.1.jar : Only if you use Image component in your doc (needed for Base64 encoding). 
 
-If you use maven, read the section "Java2Word with with Maven" below in this page.
+If you use maven, read the section "Java2Word with with Maven" below.
 
 
 
 ##WITH MAVEN##
 
-At the moment, there is no Maven repository available for this jar. I will try to find some free place to publish it.
+At the moment, there is no Maven repository available for this jar. If you know any free place to publish the Jar file please let me know.
 
-If you follow steps in Set up your Development Environment, you should have in your local ~/.m2 folder some jar like: ~/.m2/repository/java2word/java2word/3.x/java2word-3.x.jar.
+If you follow steps in "Set up your Development Environment" and successfully build the project, you should have in your local ~/.m2 folder some jar like: ~/.m2/repository/java2word/java2word/3.x/java2word-3.x.jar.
 
-java2word.jar declares xstream as a dependency.
 
 
 
 ##WITHOUT MAVEN?##
 
-You just need to drop the the java2word-X.X.jar (obviously) into the lib folder of your web app. If you use Image in your doc you need xstream-1.3.1.jar.
+You just need to drop the the *java2word-X.X.jar* (obviously) into the lib folder of your web app. If you use Image in your doc you need *xstream-1.3.1.jar*.
 
 
 
 ##EXAMPLE PROJECTS##
 
-There is a Java project where I am NOT using maven. So I dropped the jar (java2word-1.0.jar) and xstream-1.3.1.jar files in the lib directory. I utilized Struts in this example:
+Java project NOT using maven. Drop the jar (java2word-1.0.jar) and xstream-1.3.1.jar files in the lib directory. I utilized Struts in this example:
 
-Take a look at the Struts Example project There is a readme file there with steps for deployment.
+
+Take a look at the Struts Example project. There is a readme file there with steps for deployment.
 
 
 
@@ -203,37 +226,38 @@ Please check this page out.
 http://java2word.blogspot.com/p/encoding-tips-and-tricks.html If there is a better way to do a replacement I am happy to hear about it.
 
 
+
 ##CREATING A NEW WORDELEMENT##
 
 Lets imagine that you need some element that hasn't been implemented. Eg.: Bold text, Image, List...
-
+Take a look at this page:
 http://java2word.blogspot.com/p/how-to-implement-new-java2word-element.html
 
 
 
 ##TEMPLATES WITHJAVA2WORD (BETA)##
 
-I created a experimental solution for templates. take a look at this example in the wiki: TemplatesWithJava2word
+I created a experimental solution for templates. Take a look at this page: 
+http://java2word.blogspot.com.au/p/ms-word-templates-with-java2word.html
 
 
 
 ##I WANT TO HELPAND BECOME A COMMITTER##
-TODO:
-It will later write some guidelines about the elements design, unit tests, coverage, cyclomatic complexity, pmd, findbugs...
-
-If you are really keen to help, get started by reading this page and see how easily you will be able to help.
+* build the project
+* follow current pattern. Feel free to improve things. I wrote the code about 3 or 4 years ago, very late at night.
+* write unit tests, check coverage, cyclomatic complexity, pmd and findbugs.
+* test is in a real MS word document.
+* raise a pull request
 
 
 
 ##I WANT TO SUGGESTSOMETHING##
-TODO:
-Please open a new issue with Status = Suggestion and Label = Type-Enhancement or New-Development. The suggestion can be promoted to a "Task" to be done.
+TODO: working on this
 
 
 
 ##I WANT TO REPORT A BUG##
-TODO:
-Please open a new issue with "Status = New" and "Label = Type-Defect". Bug is different to new dev or suggestion. Please make sure you don't send suggestion as a bug.
+TODO: working on this
 
 
 
@@ -241,13 +265,24 @@ Please open a new issue with "Status = New" and "Label = Type-Defect". Bug is di
 
 I don't know how to host this in google code. The good thing is I commented in almost all methods. When you are writing your code, Eclipse (or whatever) should display the comment for you.
 
+TODO: link to a component library reference.
 
 
 ##CURIOSITIES##
 
-There was a real world project necessity described above but I really wanted to practice TDD skills and apply all code quality tools in java. I decided to host the code at Google's SVN. I created the project and gave a really one line description just because it was a required field and 5 days after, one guy asked me if I had any documentation - I had to quickly write some and add examples...
-I "forced" the usage some design patterns GOF (Strategy) just because I wanted to practice.
-I (Leonardo) haven't used Windows since 2008.
-I use Mac OS and Linux and currently don't have MS Word installed. I use VM and Word Viewer on Wine' 
+There was a real world project needed. However I really wanted to practice TDD skills and apply all code quality tools in java. I decided to host the code at Google's SVN. I created the project and gave literally one line description just because field was required. After 5 days, one guy asked me about the documentation - I had to quickly add examples.
+
+*I "forced" the usage some design patterns GOF (Strategy) just because I wanted to practice.
+*I (Leonardo) haven't used Windows since 2008.
+*I use Mac OS and Linux and currently don't have MS Word installed. I use VM and Word Viewer on Wine' 
+
+
+
+
+
+
+
+_abraco a todos!_
+#Leonardo Correa#
 
 
