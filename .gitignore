@@ -1,0 +1,11 @@
+.DS_Store
+.classpath
+.settings/
+build.properties
+*target*
+#*.jar
+#*.war
+#*.ear
+*.class
+.idea
+.metadata
