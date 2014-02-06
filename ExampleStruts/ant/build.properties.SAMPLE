@@ -1,0 +1,5 @@
+#
+# Rename this file to build.properties and change your JBoss deploy folder
+# classpath.external=/Users/leonardo_correa/aajava/myworkspaces/leo/.metadata/.plugins/org.jboss.tools.common.projecttemplates/lib/servlet/2.3/servlet.jar;
+
+deploy.dir=/Users/leonardo/aajava/jboss-5.1.0.GA/server/default/deploy

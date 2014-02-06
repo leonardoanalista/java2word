@@ -1,0 +1,41 @@
+.tblGenericList{
+	font: arial;
+	font-size: 14px;		
+	border-collapse: collapse;		
+	border-top: 1px solid #CCC;		
+	border-bottom: 1px solid #CCC;
+	background: white;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;	
+	
+}
+
+.tblGenericList th {
+	padding: 0 0.5em;
+	text-align: left;
+	background: #BDBDBD;
+	border-left: 1px solid #CCC;
+}
+
+.tblGenericList td {
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	padding: 0 0.5em;
+}
+
+.tblGenericList td+td {
+	border-left: 1px solid #CCC;
+	text-align: left;
+}
+
+.tblGenericList tr.even td{
+	background-color:  #F7F8E0; /* #;EFFBEF F5F6CE*/	
+}
+
+.tblGenericList tfoot {
+	padding: 0 0.5em;
+	text-align: left;
+	/*background: #D8D8D8;*/
+	border-left: 1px solid #CCC;
+	font-weight: bold;
+}

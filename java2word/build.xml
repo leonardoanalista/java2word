@@ -1,0 +1,152 @@
+<project name="Java2Word" basedir="." default="aabuild">
+	<description>
+        Java2Word Application
+    </description>
+	<!-- set global properties for this build -->
+	<property file="build.properties" />
+
+	<property name="tmp.docs.dir" value="" />
+	<!--workaround when prop hasn't been set up -->
+	<property name="tmp.docs.dir" value="${tmp.docs.dir}" />
+	<property name="root.dir" value="${root.dir}" />
+
+	<property name="pom.file" value="pom.xml" />
+	<property name="ear.dist" location="../j2w-ear/target" />
+	<property name="ear.file" value="j2w-ear.ear" />
+	<property name="ds" value="j2w-ds.xml" />
+	<property name="ear.exploded.dir" value="j2w-ear" />
+	<property name="war.filer" value="j2w-web.war" />
+	<property name="src.webapp.dir" location="../j2w-web/src/main/webapp" />
+
+	<!-- Fix ubuntu bug. See build.properties.example-->
+	<property name="mvn_full_path" value="" />
+	<property name="mvn_full_path" value="${mvn_full_path}" />
+
+
+	<target name="basic_checkings" description="This task verifies if you have set up your environment correctly.">
+
+		<fail message="ERROR: I could NOT find the property file build.properties! Copy the example file and change it." taskname="GOOD_propertyFile">
+			<condition>
+				<not>
+					<available file="build.properties" />
+				</not>
+			</condition>
+		</fail>
+
+		
+		<fail message="ERROR: I could NOT find the property 'tmp.docs.dir' in the build.properties!" taskname="BAD_tmp.docs.dir">
+			<condition>
+				<equals arg1="${tmp.docs.dir}" arg2="" />
+			</condition>
+		</fail>
+		
+		<echo>### Configuration looks good... well done man!</echo>
+	</target>
+
+	<target name="code_metrics_all" depends="basic_checkings" description="it runs: cobertura, javancss, pmd, cpd, findbugs, javadoc">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="clean" />
+			<arg value="install" />
+			<arg value="cobertura:cobertura" />
+			<arg value="javancss:report" />
+			<arg value="pmd:pmd" />
+			<arg value="pmd:cpd" />
+			<arg value="findbugs:findbugs" />
+			<arg value="javadoc:javadoc" />
+			<arg value="-DskipTests=false" />
+			<arg value="-Dbuild.env=dev" />
+		</exec>
+	</target>
+	
+	<target name="findbugs">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="findbugs:findbugs" />
+		</exec>
+	</target>
+	
+	<target name="pmd">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="pmd:pmd" />
+		</exec>
+	</target>
+	
+	<target name="cpd">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="pmd:cpd" />
+		</exec>
+	</target>
+	
+	<target name="cobertura">
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="cobertura:cobertura" />
+		</exec>
+	</target>
+	
+	<target name="javancss">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="javancss:report" />
+		</exec>
+	</target>
+	
+	<target name="checkstyle">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="checkstyle:checkstyle" />
+		</exec>
+	</target>
+
+	<target name="JavaDoc">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<!--	<arg value="-DoutputDirectory=docsleo" /> -->
+			<arg value="javadoc:javadoc" />
+			<arg value="javadoc:jar" />
+		</exec>
+	</target>
+
+	<target name="aabuild">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="clean" />
+			<arg value="install" />
+			<arg value="-DskipTests=false" />
+			<arg value="-Dbuild.env=dev" />
+		</exec>
+	</target>
+	
+	<target name="aaclean">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="${mvn_full_path}mvn">
+			<arg value="clean" />
+		</exec>
+	</target>
+
+	<!-- Not needed anymore...
+	<target name="deploy" depends="aabuild">
+		<delete dir="${jboss.dir}/${ear.file}">
+		</delete>
+		<copy todir="${jboss.dir}/${ear.file}">
+			<fileset dir="${ear.dist}/${ear.exploded.dir}" />
+		</copy>
+	</target>
+	-->
+
+	  <tstamp>
+	      <format property="date_time" pattern="yyyyMMMdd"
+	              offset="-5" unit="hour"/>
+	  </tstamp>
+
+	
+	<target name="create_version">
+		<copy file="target/java2word-3.1.jar"
+			tofile="target/java2word-3.1_${date_time}.jar">
+	    </copy>
+	</target>
+	
+	
+</project>

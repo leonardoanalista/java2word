@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.0//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_0.dtd">
+
+<!--
+  - SuppressionFilter to ignore some checks for some files. This is typically used to allow test
+  - case classes to be less strict. However, do _not_ suppress any checks for production code !
+  -->
+
+<suppressions>
+    <!--
+      - Ignore magic number checking for test cases. This is consistent with tests that define test
+      - data in Spring context files. However, developers should ensure that test data objects are
+      - still meaningfully named.
+      -->
+    <suppress checks="MagicNumberCheck" files=".*Test.*.java"/>
+
+    <!--
+      - Ignore long test cases; they are normal and to be expected.
+     -->
+    <suppress checks="FileLength" files=".*Test.*.java"/>
+
+    <!--
+      - Ignore cyclomatic complexity in test cases.
+     -->
+    <suppress checks="CyclomaticComplexity" files=".*Test.*\.java"/>
+
+    <!--
+      - Make sure that all compiled JSPs are ignored.
+      -->
+    <suppress checks=".*" files=".*\_jsp\.java"/>
+
+    <!--
+      - Make sure that all compiled JSP tag files are ignored.
+      -->
+    <suppress checks=".*" files=".*\_tag\.java"/>
+
+    <!--
+      - Make sure that all generated classes are ignored.
+      -->
+    <suppress checks=".*" files=".*generated.*"/>
+
+</suppressions>

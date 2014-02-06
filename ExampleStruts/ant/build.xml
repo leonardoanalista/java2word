@@ -1,0 +1,82 @@
+<project name="ExampleStruts" basedir="../" default="build">
+
+    <!-- Local system paths -->
+    <property file="${basedir}/ant/build.properties"/>
+    <property name="webroot.dir" value="${basedir}/WebContent"/>
+    <property name="webinf.dir" value="${webroot.dir}/WEB-INF"/>
+    <property name="build.dir" value="build"/>
+
+    <!-- Project settings -->
+    <property name="project.distname" value="ExampleStruts"/>
+
+	<!-- ################# DON'T FORGET TO RENAME THE build.properties.SAMPLE to build.properties AND CHANGE THE JBOSS DEPLOY FOLDER.
+	 Tested in JBoss 5.1.0.GA -->
+	<property name="jboss.dir" location="${jboss.dir}" />
+
+    <!-- classpath for Struts 1.1 -->
+    <path id="compile.classpath">
+        <pathelement path ="${webinf.dir}/lib/commons-beanutils.jar"/>
+        <pathelement path ="${webinf.dir}/lib/commons-digester.jar"/>
+        <pathelement path ="${webinf.dir}/lib/struts.jar"/>
+        <pathelement path ="${webinf.dir}/classes"/>
+        <pathelement path ="${classpath.external}"/>
+        <pathelement path ="${classpath}"/>
+    </path>
+
+    <!-- Check timestamp on files -->
+    <target name="prepare">
+        <tstamp/>
+    </target>
+
+    <!-- Copy any resource or configuration files -->
+    <target name="resources">
+        <copy todir="${webinf.dir}/classes" includeEmptyDirs="no">
+            <fileset dir="JavaSource">
+            <patternset>
+                <include name="**/*.conf"/>
+                <include name="**/*.properties"/>
+                <include name="**/*.xml"/>
+            </patternset>
+            </fileset>
+        </copy>
+    </target>
+
+    <!-- Normal build of application -->
+    <target name="compile" depends="prepare,resources">
+        <javac srcdir="JavaSource" destdir="${webinf.dir}/classes">
+            <classpath refid="compile.classpath"/>
+        </javac>
+    </target>
+
+    <!-- Remove classes directory for clean build -->
+    <target name="clean"
+      description="Prepare for clean build">
+      <delete dir="${webinf.dir}/classes"/>
+      <mkdir  dir="${webinf.dir}/classes"/>
+    </target>
+
+    <!-- Build entire project -->
+    <target name="build" depends="prepare,compile"/>
+    <target name="rebuild" depends="clean,prepare,compile"/>
+
+    <!-- Create binary distribution -->
+    <target name="war" depends="build">
+      <mkdir dir="${build.dir}"/>
+      <war
+        basedir="${webroot.dir}"
+        warfile="${build.dir}/${project.distname}.war"
+        webxml="${webinf.dir}/web.xml">
+        <exclude name="WEB-INF/${build.dir}/**"/>
+        <exclude name="WEB-INF/src/**"/>
+        <exclude name="WEB-INF/web.xml"/>
+       </war>
+
+    </target>
+
+    <target name="deploy" depends="war">
+       <delete file="${deploy.dir}/${project.distname}.war"/>
+       <delete dir="${deploy.dir}/${project.distname}"/>
+       <copy file="${build.dir}/${project.distname}.war" todir="${deploy.dir}"/>
+    </target>
+
+</project>

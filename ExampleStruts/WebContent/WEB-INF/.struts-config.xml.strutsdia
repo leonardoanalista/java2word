@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="getName" NAME="forward0" PATH="/pages/inputname.jsp"
+  SHAPE="24,41,93,27" TARGET="page0" TITLE="getName" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page0" PATH="/pages/inputname.jsp"
+  SHAPE="192,42,56,46" SUBTYPE="jsp" TITLE="inputname.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/greeting.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="greeting.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/report.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/report.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#greeting" NAME="action0" PATH="/greeting"
+  SHAPE="368,41,123,43" TITLE="GetNameForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="sayhello" NAME="forward0"
+   PATH="/pages/greeting.jsp" TARGET="page1" TITLE="sayhello"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page1" PATH="/pages/greeting.jsp"
+  SHAPE="568,42,56,30" SUBTYPE="jsp" TITLE="greeting.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#salaryReport" NAME="action1" PATH="/salaryReport"
+  SHAPE="400,154,0,0" TITLE="SalaryReportForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="ok" NAME="forward0"
+   PATH="/pages/salaryReport.jsp" TARGET="page2" TITLE="ok"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page2" PATH="/pages/salaryReport.jsp"
+  SHAPE="608,266,0,0" SUBTYPE="jsp" TITLE="salaryReport.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/salaryReport.do"
+   SUBTYPE="confirmed" TARGET="action1" TITLE="/salaryReport.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#report" NAME="action2" PATH="/report"
+  SHAPE="400,266,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="salaryReport" NAME="forward1"
+  PATH="/pages/salaryReport.jsp" SHAPE="256,401,0,0" TARGET="page2"
+  TITLE="salaryReport" TYPE="forward" model-entity="StrutsProcessItem"/>
+</PROCESS>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>java2word</groupId>
+		<artifactId>ExampleSeam</artifactId>
+		<version>1.0</version>
+		<relativePath>../ExampleSeam-app/pom.xml</relativePath>
+	</parent>
+
+	<groupId>java2word</groupId>
+	<artifactId>ExampleSeam-ear</artifactId>
+	<version>1.0</version>
+	<packaging>ear</packaging>
+	<name>ExampleSeam - EAR</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+			<version>${version.seam}</version>
+			<type>ejb</type>
+			<exclusions>
+				<exclusion>
+					<groupId>xstream</groupId>
+					<artifactId>xstream</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>xpp3</groupId>
+					<artifactId>xpp3_min</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.el</groupId>
+			<artifactId>jboss-el</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.el</groupId>
+					<artifactId>el-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.richfaces.framework</groupId>
+			<artifactId>richfaces-api</artifactId>
+			<version>${version.richfaces}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-collections</groupId>
+					<artifactId>commons-collections</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!--  Application modules -->
+		<dependency>
+			<groupId>java2word</groupId>
+			<artifactId>ExampleSeam-war</artifactId>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>java2word</groupId>
+			<artifactId>ExampleSeam-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+	<finalName>ExampleSeam-ear</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<version>5</version>
+					<modules>
+						<webModule>
+							<groupId>java2word</groupId>
+							<artifactId>ExampleSeam-war</artifactId>
+							<contextRoot>ExampleSeam</contextRoot>
+							<unpack>true</unpack>
+						</webModule>
+
+						<ejbModule>
+							<groupId>org.jboss.seam</groupId>
+							<artifactId>jboss-seam</artifactId>
+						</ejbModule>
+
+						<jarModule>
+							<groupId>org.richfaces.framework</groupId>
+							<artifactId>richfaces-api</artifactId>
+							<bundleDir>lib</bundleDir>
+						</jarModule>
+
+						<jarModule>
+							<groupId>org.jboss.el</groupId>
+							<artifactId>jboss-el</artifactId>
+							<bundleDir>lib</bundleDir>
+						</jarModule>
+
+						<jarModule>
+							<groupId>commons-beanutils</groupId>
+							<artifactId>commons-beanutils</artifactId>
+							<bundleDir>lib</bundleDir>
+						</jarModule>
+					</modules>
+
+					<jboss>
+						<version>${version.jboss.app}</version>
+						<loader-repository>ExampleSeam:app=ejb3</loader-repository>
+					</jboss>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${basedir}/target</outputDirectory>
+				</configuration>
+			</plugin>
+        </plugins>
+
+        <resources>
+        	<resource>
+        		<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+	</build>
+</project>

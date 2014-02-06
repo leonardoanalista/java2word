@@ -1,0 +1,25 @@
+============= Version 3.3 - 07-May-2012  =============
+    
+    - issue 57 Facing problem in changing font of text.
+    
+
+============= Version 3.2 - 01-Feb-2012  =============
+
+
+    - Experimental TableV2 (version 2) has been added. Possible to merge cells, format cells and all features of V1.
+    - Issue 85: Create Image from InputStream
+    
+============= Version 3.1 - 01-Feb-2012  =============
+
+Minor release. Applied patch for Identation and hiperlinks by whoahbot, Added some comments on methods, work in progress for special characters in Utils.java.
+
+    - Issue 70: Created a method on Utils.class called replaceSpecialCharacters. This is under experiments.
+    - Issue 82: Alternative for those who want to use paragraphs in table. 
+              Now you can NOT pass null to a table cell, which doens't make sense anyway. You have to pass "".
+      
+    - Issue 46:   Adding indentation
+    - Issue 45:   Adding hyperlinks to the document   
+    - Removed all deprecated methods
+
+Upgrade steps:
+    - download this version or checkout the latest code and build your own jar file.

@@ -1,0 +1,70 @@
+<project name="ExampleSeam" basedir="." default="deploy">
+	<description>
+        Java2Word Application
+    </description>
+	<!-- set global properties for this build -->
+	<property file="build.properties" />
+	<!--
+	<property name="jboss.dir" location="/Applications/jboss-4.2.3.GA/server/phages/deploy" />
+	<property name="root.dir" value="../phages-app" />
+	-->
+
+	<property name="jboss.dir" location="${jboss.dir}" />
+	<property name="root.dir" value="${root.dir}" />
+
+
+	<property name="pom.file" value="pom.xml" />
+	<property name="ear.dist" location="../ExampleSeam-ear/target" />
+	<property name="ear.file" value="ExampleSeam-ear.ear" />
+	<property name="ds.dir" location="../phages-db/src/main/resources" />
+	<property name="ds" value="j2w-ds.xml" />
+	<property name="ear.exploded.dir" value="ExampleSeam-ear" />
+	<property name="war.filer" value="ExampleSeam-web.war" />
+	<property name="src.webapp.dir" location="../j2w-web/src/main/webapp" />
+
+	<target name="Code Metrics">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="mvn">
+			<arg value="clean" />
+			<arg value="install" />
+			<arg value="cobertura:cobertura" />
+			<arg value="javancss:report" />
+			<arg value="pmd:pmd" />
+			<arg value="pmd:cpd" />
+			<arg value="findbugs:findbugs" />
+			<arg value="-DskipTests=false" />
+			<arg value="-Dbuild.env=dev" />
+		</exec>
+	</target>
+
+	<target name="build">
+		<echo>${root.dir}/${pom.file}</echo>
+		<exec executable="mvn">
+			<arg value="clean" />
+			<arg value="install" />
+			<arg value="-DskipTests=false" />
+			<arg value="-Dbuild.env=dev" />
+		</exec>
+	</target>
+
+	<target name="deploy" depends="build">
+		<!--
+		<delete dir="${jboss.dir}/../work"/>
+		<delete dir="${jboss.dir}/../tmp"/>
+		<delete dir="${jboss.dir}/../log"/>
+		<delete dir="${jboss.dir}/../data"/>
+		-->
+		<delete dir="${jboss.dir}/${ear.file}">
+		</delete>
+		<copy todir="${jboss.dir}/${ear.file}">
+			<fileset dir="${ear.dist}/${ear.exploded.dir}" />
+		</copy>
+	</target>
+
+	<!--
+	<target name="deploy data source">
+		<copy file="${ds.dir}/${ds}" todir="${jboss.dir}" />
+	</target>
+	-->
+
+</project>

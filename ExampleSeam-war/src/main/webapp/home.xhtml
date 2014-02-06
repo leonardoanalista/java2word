@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:s="http://jboss.com/products/seam/taglib"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a="http://richfaces.org/a4j" template="/layout/template.xhtml">
+
+	<ui:define name="center">
+		<rich:panel id="panel">
+			<f:facet name="header">ExampleSeam</f:facet>
+
+			<p>This is an example Application using Java2Word API</p>
+			<ul>
+				<li>More in: <a href="http://code.google.com/p/java2word/">http://code.google.com/p/java2word/</a>
+				</li>
+			</ul>
+			<h:form id="loginHistorySearch" styleClass="edit">
+			<h:commandLink id="btnPrintWord01" class="edit"
+				action="#{reportCaller.runReport()}" value="Print/Download Word Document!!!"
+				target="blank"
+				style="margin-left:50px; font-size:20px; font-weight:bold;">
+			</h:commandLink>
+			</h:form>
+		</rich:panel>
+	</ui:define>
+</ui:composition>

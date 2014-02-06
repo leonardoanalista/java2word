@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages xmlns="http://jboss.com/products/seam/pages"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://jboss.com/products/seam/pages http://jboss.com/products/seam/pages-2.2.xsd"
+		no-conversation-view-id="/home.xhtml" 
+		login-view-id="/login.xhtml">
+	
+	<page view-id="/*">
+		<navigation from-action="home">
+			<end-conversation before-redirect="true"/>
+			<redirect view-id="/home.xhtml"></redirect>
+		</navigation>
+		
+		<!-- 
+		<navigation from-action="personList">
+			<end-conversation before-redirect="true"/>
+			<redirect view-id="/page/person/personList.xhtml"></redirect>
+		</navigation>	
+		 -->
+	</page>
+	
+	<!--
+		Hopefully this fixes the RF CSS Problem with Seam, see
+		http://jira.jboss.com/jira/browse/JBSEAM-1009
+
+
+	<page view-id="/home.*" login-required="true" />
+	<page view-id="/index.*" login-required="true" />
+	<page view-id="/login.*" login-required="false" />
+
+	<page view-id="/layout/*" login-required="false" />
+	<page view-id="/img/*" login-required="false" />
+	<page view-id="/stylesheet/*" login-required="false" />
+	-->
+
+	<exception
+		class="org.jboss.seam.framework.EntityNotFoundException">
+		<redirect view-id="/error.xhtml">
+			<message>Not found</message>
+		</redirect>
+	</exception>
+
+	<exception class="org.hibernate.validator.InvalidStateException">
+		<end-conversation />
+		<redirect view-id="/error.xhtml" />
+	</exception>
+
+	<exception class="javax.persistence.EntityNotFoundException">
+		<redirect view-id="/error.xhtml">
+			<message>Not found</message>
+		</redirect>
+	</exception>
+
+	<exception class="javax.persistence.OptimisticLockException">
+		<end-conversation />
+		<redirect view-id="/error.xhtml">
+			<message>
+				Another user changed the same data, please try again
+			</message>
+		</redirect>
+	</exception>
+
+	<exception class="org.jboss.seam.security.AuthorizationException">
+		<redirect view-id="/error.xhtml">
+			<message>You don't have permission to do this</message>
+		</redirect>
+	</exception>
+
+	<exception class="org.jboss.seam.security.NotLoggedInException">
+		<redirect view-id="/login.xhtml">
+			<message>#{messages['org.jboss.seam.NotLoggedIn']}</message>
+		</redirect>
+	</exception>
+
+	<exception class="javax.faces.application.ViewExpiredException">
+		<redirect view-id="/error.xhtml">
+			<message>
+				Your session has timed out, please try again
+			</message>
+		</redirect>
+	</exception>
+
+	<exception>
+		<redirect view-id="/error.xhtml">
+			<message>Unexpected error, please try again</message>
+		</redirect>
+	</exception>
+</pages>

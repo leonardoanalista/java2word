@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>java2word</groupId>
+		<artifactId>ExampleSeam</artifactId>
+		<version>1.0</version>
+		<relativePath>../ExampleSeam-ear/pom.xml</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ExampleSeam-war</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<name>ExampleSeam - WAR</name>
+
+	<build>
+	<finalName>ExampleSeam-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+
+				<configuration>
+					<webResources>
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>src/main/webapp</directory>
+
+							<filtering>true</filtering>
+
+							<includes>
+								<include>**/components.xml</include>
+								<include>**/web.xml</include>
+								<include>**/footer.xhtml</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>java2word</groupId>
+			<artifactId>ExampleSeam-ejb</artifactId>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+			<scope>provided</scope>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam-ui</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-beanutils</groupId>
+					<artifactId>commons-beanutils</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+<!--
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam-mail</artifactId>
+		</dependency>
+ -->
+		<dependency>
+			<groupId>com.sun.facelets</groupId>
+			<artifactId>jsf-facelets</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.richfaces.ui</groupId>
+			<artifactId>richfaces-ui</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.richfaces.framework</groupId>
+			<artifactId>richfaces-impl</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.richfaces.framework</groupId>
+					<artifactId>richfaces-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>commons-beanutils</groupId>
+					<artifactId>commons-beanutils</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>

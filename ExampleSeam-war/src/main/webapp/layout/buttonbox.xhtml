@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:s="http://jboss.com/products/seam/taglib"
+		xmlns:rich="http://richfaces.org/rich">
+        
+	<h:panelGrid styleClass="buttonBox" columns="2" columnClasses="name, value">
+		<rich:column>
+			<ui:insert name="label"/>
+		</rich:column>
+	    	
+		<rich:column>
+			<div style="float:left;">
+		    	<ui:insert/>
+		    </div>	
+			<div class="message-required" style="float:right;">
+	    		<span class="required">*</span>
+				#{messages['general.required']}
+			</div>
+		</rich:column> 
+	</h:panelGrid>
+</ui:composition>

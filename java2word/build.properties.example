@@ -1,0 +1,11 @@
+# Copy this file into build.properties and customize it
+
+# for unit tests. No slash at the end
+tmp.docs.dir=/home/leonardo/Desktop
+
+# If for any reason you see this message (linux only...):
+# Cannot run program "mvn": java.io.IOException
+# add this line but change the maven dir according to your system.
+# This happens when you don't have maven installed in your system. Eg.: you donwloaded, extracted and added $MAVEN_HOME/bin to your $PATH
+# You won't see this problem if you installed maven via apt-get.
+#mvn_full_path=/home/leonardo/aajava/maven/current/bin/

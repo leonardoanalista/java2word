@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+                               "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="GetNameForm" type="demo.GetNameForm" />
+		<form-bean name="SalaryReportForm" type="demo.SalaryReportForm" />
+	</form-beans>
+
+
+	<global-exceptions />
+	<global-forwards>
+		<forward name="salaryReport" path="/pages/salaryReport.jsp" />
+		<forward name="allInOne" path="/pages/allInOne.jsp" />
+		<forward name="getName" path="/pages/inputname.jsp" />
+	</global-forwards>
+
+	<action-mappings>
+		<action name="GetNameForm" path="/greeting" scope="request"
+			type="demo.GreetingAction">
+			<forward name="sayhello" path="/pages/greeting.jsp" />
+		</action>
+
+		<action name="SalaryReportForm" path="/salaryReport" scope="request"
+			type="demo.SalaryReportAction">
+			<forward name="ok" path="/pages/salaryReport.jsp" />
+		</action>
+
+		<action name="SalaryReportForm" path="/allInOne" scope="request"
+			type="demo.AllInOneAction">
+			<forward name="ok" path="/pages/salaryReport.jsp" />
+		</action>
+
+	</action-mappings>
+
+
+	<controller />
+</struts-config>

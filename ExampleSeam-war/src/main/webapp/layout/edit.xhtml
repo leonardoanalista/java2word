@@ -1,0 +1,25 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:s="http://jboss.com/products/seam/taglib"
+		xmlns:rich="http://richfaces.org/rich">
+        
+	<h:panelGrid columns="2" columnClasses="name, value">
+		<h:column>
+			<s:label styleClass="#{invalid?'error-label':''}">
+				<ui:insert name="label"/>
+				<s:span styleClass="required" rendered="#{required}">*</s:span>
+			</s:label>
+		</h:column>
+	    	
+		<h:column>
+			<span class="#{invalid?'errors':''} #{readonly?'readonly':''}">
+				<s:validateAll>
+					<ui:insert/>
+					<s:message styleClass="error errors" showSummary="true" showDetail="false" style="clear:both;" />
+				</s:validateAll>
+			</span>
+		</h:column> 
+	</h:panelGrid>
+</ui:composition>

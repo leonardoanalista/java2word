@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: j2w-checkstyle
+    Description: none
+-->
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <property name="severity" value="warning"/>
+    <module name="TreeWalker">
+        <property name="cacheFile" value="${checkstyle.cache.file}"/>
+        <module name="FileContentsHolder"/>
+        <module name="JavadocType">
+            <property name="scope" value="public"/>
+        </module>
+        <module name="JavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="allowUndeclaredRTE" value="true"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="scope" value="public"/>
+        </module>
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="MethodName"/>
+        <module name="PackageName"/>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+        <module name="FileLength"/>
+        <module name="LineLength">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="altered"/>
+            <property name="max" value="130"/>
+        </module>
+        <module name="MethodLength"/>
+        <module name="ParameterNumber"/>
+        <module name="EmptyForIteratorPad"/>
+        <module name="MethodParamPad"/>
+        <module name="OperatorWrap"/>
+        <module name="TypecastParenPad"/>
+        <module name="TabCharacter"/>
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyBlock"/>
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+        <module name="DoubleCheckedLocking"/>
+        <module name="EmptyStatement"/>
+        <module name="EqualsHashCode"/>
+        <module name="IllegalInstantiation">
+            <property name="classes" value="java.lang.Boolean, java.lang.StringBuffer"/>
+        </module>
+        <module name="InnerAssignment"/>
+        <module name="MagicNumber"/>
+        <module name="MissingSwitchDefault"/>
+        <module name="RedundantThrows"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="DesignForExtension"/>
+        <module name="FinalClass"/>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="InterfaceIsType"/>
+        <module name="VisibilityModifier">
+            <property name="protectedAllowed" value="true"/>
+        </module>
+        <module name="ArrayTypeStyle"/>
+        <module name="FinalParameters"/>
+        <module name="GenericIllegalRegexp">
+            <property name="format" value="\s+$"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="message" value="Line has trailing spaces."/>
+        </module>
+        <module name="GenericIllegalRegexp">
+            <property name="format" value="System\.out\.println"/>
+            <property name="message" value="please use a logger"/>
+        </module>
+        <module name="UpperEll"/>
+    </module>
+    <module name="Translation"/>
+    <module name="SeverityMatchFilter">
+        <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="only Errors are Errors"/>
+    </module>
+    <module name="SuppressionCommentFilter">
+        <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="allow to suppress CheckStyle warnings/errors if you have a good reason"/>
+    </module>
+</module>

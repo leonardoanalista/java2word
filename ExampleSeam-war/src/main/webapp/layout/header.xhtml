@@ -1,0 +1,23 @@
+<h:form xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:s="http://jboss.com/products/seam/taglib"
+		xmlns:rich="http://richfaces.org/rich"
+		id="header-form">
+
+	<rich:toolBar id="tool-bar" style="height:25px;">
+		<rich:toolBarGroup location="left" id="tool-bar-group-left">
+			<rich:menuItem value="Home" action="home" id="home" />
+			<rich:menuItem value="Employee Report" action="personList" id="personList"/>
+
+
+			<ui:include src="/layout/status.xhtml"/>
+		</rich:toolBarGroup>
+
+		<rich:toolBarGroup location="right" id="tool-bar-group-right">
+			<h:outputText value="&#160;" />
+			<h:commandLink value="#{messages['general.logout']}" action="#{identity.logout}" id="logout-link" rendered="#{identity.loggedIn}"/>
+		</rich:toolBarGroup>
+	</rich:toolBar>
+</h:form>

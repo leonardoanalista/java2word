@@ -1,0 +1,28 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:s="http://jboss.com/products/seam/taglib"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:rich="http://richfaces.org/rich"
+		template="/layout/template.xhtml">
+
+	<ui:define name="center">
+
+		<h:form id="login">
+			<rich:panel id="login-panel">
+    			<f:facet name="header">Login</f:facet>
+           	    <h:panelGrid columns="2" columnClasses="name,value">
+                   	<h:outputLabel for="username">username:</h:outputLabel>
+                   	<h:inputText id="username" value="#{identity.username}"/>
+                   	<h:outputLabel for="password">password:</h:outputLabel>
+                   	<h:inputSecret id="password" value="#{identity.password}"/>
+
+                   	<s:fragment>&#160;</s:fragment>
+                   	<h:commandButton value="Login" action="#{identity.login}" id="login-button"/>
+               	</h:panelGrid>
+	        </rich:panel>
+	    </h:form>
+	</ui:define>
+</ui:composition>

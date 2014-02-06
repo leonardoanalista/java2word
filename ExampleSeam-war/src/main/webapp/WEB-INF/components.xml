@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://jboss.com/products/seam/components"
+	xmlns:bpm="http://jboss.com/products/seam/bpm" 
+	xmlns:core="http://jboss.com/products/seam/core"
+	xmlns:jms="http://jboss.com/products/seam/jms" 
+	xmlns:mail="http://jboss.com/products/seam/mail"
+	xmlns:persistence="http://jboss.com/products/seam/persistence"
+	xmlns:security="http://jboss.com/products/seam/security"
+	xmlns:transaction="http://jboss.com/products/seam/transaction"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.com/products/seam/transaction http://jboss.com/products/seam/transaction-2.2.xsd 
+			http://jboss.com/products/seam/core http://jboss.com/products/seam/core-2.2.xsd                   
+			http://jboss.com/products/seam/persistence http://jboss.com/products/seam/persistence-2.2.xsd                   
+			http://jboss.com/products/seam/drools http://jboss.com/products/seam/drools-2.2.xsd                  
+			http://jboss.com/products/seam/bpm http://jboss.com/products/seam/bpm-2.2.xsd                  
+			http://jboss.com/products/seam/security http://jboss.com/products/seam/security-2.2.xsd                  
+			http://jboss.com/products/seam/mail http://jboss.com/products/seam/mail-2.2.xsd                  
+			http://jboss.com/products/seam/components http://jboss.com/products/seam/components-2.2.xsd 
+			http://jboss.com/products/seam/jms http://jboss.com/products/seam/jms-2.2.xsd">
+
+	<component name="org.jboss.seam.core.init">
+		<property name="debug">${seam.debug}</property>
+		<property name="jndi-pattern">ExampleSeam-ear/#{ejbName}/local
+		</property>
+	</component>
+
+	<core:manager concurrent-request-timeout="500"
+		conversation-id-parameter="cid" conversation-timeout="120000" />
+
+	<transaction:ejb-transaction />
+
+	<persistence:managed-persistence-context
+		auto-create="true" name="entityManager" persistence-unit-jndi-name="java:/ExampleSeam-EntityManagerFactory" />
+
+	<!--
+		<drools:rule-base name="securityRules"> <drools:rule-files>
+		<value>/security.drl</value> </drools:rule-files> </drools:rule-base>
+	-->
+	<security:identity authenticate-method="#{authenticator.authenticate}" />
+
+	<mail:mail-session host="localhost" password="test"
+		port="2525" username="test" />
+	<!--
+    Configure JBoss Messaging queues for Seam 
+  -->
+	<!--	
+		<jms:queue-connection
+		queue-connection-factory-jndi-name="java:/ConnectionFactory" />
+		<jms:managed-queue-sender auto-create="true" name="myQueue"
+		queue-jndi-name="queue/myQueueName" />
+	-->
+
+	<!-- 
+    For use with jBPM pageflow or process management 
+  -->
+	<!--
+		<bpm:jbpm> <bpm:process-definitions>
+		<value>xyz/.../processdefinition.xml</value>
+		</bpm:process-definitions> </bpm:jbpm>
+	-->
+</components>

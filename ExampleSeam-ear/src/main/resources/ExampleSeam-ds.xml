@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================== -->
+<!-- Example Datasource for PostgreSQL                                     -->
+<!-- ===================================================================== -->
+
+
+<datasources>
+	<local-tx-datasource>
+		<jndi-name>ExampleSeamDS</jndi-name>
+		<connection-url>${jdbc.connection.url}</connection-url>
+		<driver-class>${jdbc.driver.class}</driver-class>
+
+		<user-name>${jdbc.user}</user-name>
+		<password>${jdbc.password}</password>
+
+		<min-pool-size>${min.pool.size}</min-pool-size>
+		<max-pool-size>${max.pool.size}</max-pool-size>
+
+		<idle-timeout-minutes>10</idle-timeout-minutes>
+		<prepared-statement-cache-size>30</prepared-statement-cache-size>
+
+		<!-- default is 30000 -->
+		<blocking-timeout-millis>30000</blocking-timeout-millis>
+
+		<!--
+			sql to call when connection is created. Can be anything, select 1 is
+			valid for PostgreSQL
+		-->
+		<new-connection-sql>select 1</new-connection-sql>
+
+		<!--
+			sql to call on an existing pooled connection when it is obtained from
+			pool. Can be anything, select 1 is valid for PostgreSQL
+		-->
+		<check-valid-connection-sql>select 1</check-valid-connection-sql>
+
+
+		<!-- corresponding type-mapping in the standardjbosscmp-jdbc.xml -->
+		<metadata>
+			<type-mapping>PostgreSQL 8.0</type-mapping>
+		</metadata>
+	</local-tx-datasource>
+</datasources>

@@ -1,0 +1,31 @@
+<rich:page xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:rich="http://richfaces.org/rich"
+		xmlns:a="http://richfaces.org/a4j" 
+		markupType="xhtml"
+		contentType="text/html">
+		
+	<a:loadStyle src="/stylesheet/screen.css" />	
+
+    <f:facet name="pageHeader">
+		<link rel="shortcut icon"
+				href="#{facesContext.externalContext.requestContextPath}/img/favicon.ico"
+				type="image/x-icon" />
+    </f:facet>
+    
+    <f:facet name="header">
+    	<h:panelGroup>
+    		<ui:include src="/layout/header.xhtml" />
+    		<ui:include src="/layout/messages.xhtml" />
+    	</h:panelGroup>
+    </f:facet>
+    
+    <f:facet name="footer">
+    	<ui:include src="/layout/footer.xhtml" />
+    </f:facet>
+    
+    <ui:insert name="center"/>
+    
+</rich:page>  

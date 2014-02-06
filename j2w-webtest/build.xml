@@ -1,0 +1,36 @@
+<project name="j2w-webtest" basedir="." default="deploy">
+  <description>
+    j2w-webtest
+    </description>
+  <property file="build.properties" />
+
+  <property name="jboss.dir" location="${jboss.dir}" />
+  <property name="root.dir" value="${root.dir}" />
+
+  <property name="pom.file" value="pom.xml" />
+  <property name="war.dist" location="target" />
+
+  <property name="war.file" value="j2w-webtest" />
+  <property name="war.exploded.dir" value="j2w-webtest" />
+
+  <property name="mvn_full_path" value="" />
+  <property name="mvn_full_path" value="${mvn_full_path}" />
+
+  <target name="build">
+    <echo>${root.dir}/${pom.file}</echo>
+    <exec executable="${mvn_full_path}mvn">
+      <arg value="clean" />
+      <arg value="install" />
+      <arg value="-DskipTests=false" />
+    </exec>
+  </target>
+
+  <target name="deploy" depends="build">
+    <delete dir="${jboss.dir}/${war.file}">
+    </delete>
+    <copy todir="${jboss.dir}/${war.file}">
+      <fileset dir="${war.dist}/${war.exploded.dir}" />
+    </copy>
+  </target>
+
+</project>

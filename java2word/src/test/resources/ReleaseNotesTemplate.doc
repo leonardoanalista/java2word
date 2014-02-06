@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<w:wordDocument xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:mo="http://schemas.microsoft.com/office/mac/office/2008/main" xmlns:ve="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="urn:schemas-microsoft-com:mac:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
+    <w:ignoreSubtree w:val="http://schemas.microsoft.com/office/word/2003/wordml/sp2"/>
+    <o:DocumentProperties>
+        <o:Author>Admin</o:Author>
+        <o:LastAuthor>Admin</o:LastAuthor>
+        <o:Revision>13</o:Revision>
+        <o:TotalTime>9</o:TotalTime>
+        <o:Created>2011-03-22T05:10:00Z</o:Created>
+        <o:LastSaved>2011-03-22T05:22:00Z</o:LastSaved>
+        <o:Pages>1</o:Pages>
+        <o:Words>5</o:Words>
+        <o:Characters>31</o:Characters>
+        <o:Lines>1</o:Lines>
+        <o:Paragraphs>1</o:Paragraphs>
+        <o:CharactersWithSpaces>38</o:CharactersWithSpaces>
+        <o:Version>12</o:Version>
+    </o:DocumentProperties>
+    <w:fonts>
+        <w:defaultFonts w:ascii="Cambria" w:fareast="Cambria" w:h-ansi="Cambria" w:cs="Times New Roman"/>
+        <w:font w:name="Times New Roman">
+            <w:panose-1 w:val="02020603050405020304"/>
+            <w:charset w:val="00"/>
+            <w:family w:val="auto"/>
+            <w:pitch w:val="variable"/>
+            <w:sig w:usb-0="00000003" w:usb-1="00000000" w:usb-2="00000000" w:usb-3="00000000" w:csb-0="00000001" w:csb-1="00000000"/>
+        </w:font>
+        <w:font w:name="Cambria">
+            <w:panose-1 w:val="02040503050406030204"/>
+            <w:charset w:val="00"/>
+            <w:family w:val="auto"/>
+            <w:pitch w:val="variable"/>
+            <w:sig w:usb-0="00000003" w:usb-1="00000000" w:usb-2="00000000" w:usb-3="00000000" w:csb-0="00000001" w:csb-1="00000000"/>
+        </w:font>
+        <w:font w:name="Century Gothic">
+            <w:panose-1 w:val="020B0502020202020204"/>
+            <w:charset w:val="00"/>
+            <w:family w:val="auto"/>
+            <w:pitch w:val="variable"/>
+            <w:sig w:usb-0="00000003" w:usb-1="00000000" w:usb-2="00000000" w:usb-3="00000000" w:csb-0="00000001" w:csb-1="00000000"/>
+        </w:font>
+    </w:fonts>
+    <w:styles>
+        <w:versionOfBuiltInStylenames w:val="2"/>
+        <w:latentStyles w:defLockedState="off" w:latentStyleCount="276">
+            <w:lsdException w:name="Normal"/>
+            <w:lsdException w:name="heading 1"/>
+            <w:lsdException w:name="heading 2"/>
+            <w:lsdException w:name="heading 3"/>
+            <w:lsdException w:name="heading 4"/>
+            <w:lsdException w:name="heading 5"/>
+            <w:lsdException w:name="heading 6"/>
+            <w:lsdException w:name="heading 7"/>
+            <w:lsdException w:name="heading 8"/>
+            <w:lsdException w:name="heading 9"/>
+            <w:lsdException w:name="caption"/>
+            <w:lsdException w:name="Title"/>
+            <w:lsdException w:name="Subtitle"/>
+            <w:lsdException w:name="Strong"/>
+            <w:lsdException w:name="Emphasis"/>
+            <w:lsdException w:name="No Spacing"/>
+            <w:lsdException w:name="List Paragraph"/>
+        </w:latentStyles>
+        <w:style w:type="paragraph" w:default="on" w:styleId="Normal">
+            <w:name w:val="Normal"/>
+            <w:rsid w:val="00F04FB2"/>
+            <w:pPr>
+                <w:spacing w:after="200"/>
+            </w:pPr>
+            <w:rPr>
+                <wx:font wx:val="Cambria"/>
+                <w:sz w:val="24"/>
+                <w:sz-cs w:val="24"/>
+                <w:lang w:val="EN-US" w:fareast="EN-US" w:bidi="AR-SA"/>
+            </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:default="on" w:styleId="DefaultParagraphFont">
+            <w:name w:val="Default Paragraph Font"/>
+        </w:style>
+        <w:style w:type="table" w:default="on" w:styleId="TableNormal">
+            <w:name w:val="Normal Table"/>
+            <wx:uiName wx:val="Table Normal"/>
+            <w:rPr>
+                <wx:font wx:val="Cambria"/>
+                <w:lang w:val="EN-AU" w:fareast="EN-US" w:bidi="AR-SA"/>
+            </w:rPr>
+            <w:tblPr>
+                <w:tblInd w:w="0" w:type="dxa"/>
+                <w:tblCellMar>
+                    <w:top w:w="0" w:type="dxa"/>
+                    <w:left w:w="108" w:type="dxa"/>
+                    <w:bottom w:w="0" w:type="dxa"/>
+                    <w:right w:w="108" w:type="dxa"/>
+                </w:tblCellMar>
+            </w:tblPr>
+        </w:style>
+        <w:style w:type="list" w:default="on" w:styleId="NoList">
+            <w:name w:val="No List"/>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Header">
+            <w:name w:val="header"/>
+            <wx:uiName wx:val="Header"/>
+            <w:basedOn w:val="Normal"/>
+            <w:link w:val="HeaderChar"/>
+            <w:rsid w:val="009B6103"/>
+            <w:pPr>
+                <w:tabs>
+                    <w:tab w:val="center" w:pos="4320"/>
+                    <w:tab w:val="right" w:pos="8640"/>
+                </w:tabs>
+            </w:pPr>
+            <w:rPr>
+                <wx:font wx:val="Cambria"/>
+            </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="HeaderChar">
+            <w:name w:val="Header Char"/>
+            <w:basedOn w:val="DefaultParagraphFont"/>
+            <w:link w:val="Header"/>
+            <w:rsid w:val="009B6103"/>
+            <w:rPr>
+                <w:sz w:val="24"/>
+                <w:sz-cs w:val="24"/>
+                <w:lang w:val="EN-US"/>
+            </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Footer">
+            <w:name w:val="footer"/>
+            <wx:uiName wx:val="Footer"/>
+            <w:basedOn w:val="Normal"/>
+            <w:link w:val="FooterChar"/>
+            <w:rsid w:val="009B6103"/>
+            <w:pPr>
+                <w:tabs>
+                    <w:tab w:val="center" w:pos="4320"/>
+                    <w:tab w:val="right" w:pos="8640"/>
+                </w:tabs>
+            </w:pPr>
+            <w:rPr>
+                <wx:font wx:val="Cambria"/>
+            </w:rPr>
+        </w:style>
+        <w:style w:type="character" w:styleId="FooterChar">
+            <w:name w:val="Footer Char"/>
+            <w:basedOn w:val="DefaultParagraphFont"/>
+            <w:link w:val="Footer"/>
+            <w:rsid w:val="009B6103"/>
+            <w:rPr>
+                <w:sz w:val="24"/>
+                <w:sz-cs w:val="24"/>
+                <w:lang w:val="EN-US"/>
+            </w:rPr>
+        </w:style>
+    </w:styles>
+    <w:docPr>
+        <w:view w:val="print"/>
+        <w:zoom w:percent="140"/>
+        <w:defaultTabStop w:val="720"/>
+        <w:drawingGridHorizontalSpacing w:val="360"/>
+        <w:drawingGridVerticalSpacing w:val="360"/>
+        <w:displayHorizontalDrawingGridEvery w:val="0"/>
+        <w:displayVerticalDrawingGridEvery w:val="0"/>
+        <w:punctuationKerning/>
+        <w:characterSpacingControl w:val="DontCompress"/>
+        <w:allowPNG/>
+        <w:doNotSaveWebPagesAsSingleFile/>
+        <w:savePreviewPicture/>
+        <w:validateAgainstSchema/>
+        <w:saveInvalidXML w:val="off"/>
+        <w:ignoreMixedContent w:val="off"/>
+        <w:alwaysShowPlaceholderText w:val="off"/>
+        <w:compat>
+            <w:breakWrappedTables/>
+            <w:snapToGridInCell/>
+            <w:wrapTextWithPunct/>
+            <w:useAsianBreakRules/>
+            <w:dontGrowAutofit/>
+        </w:compat>
+        <wsp:rsids>
+            <wsp:rsidRoot wsp:val="00F96903"/>
+        </wsp:rsids>
+    </w:docPr>
+    <w:body>
+        <w:p wsp:rsidR="000E7286" wsp:rsidRPr="009F2CC8" wsp:rsidRDefault="000E7286" wsp:rsidP="009F2CC8">
+            <w:pPr>
+                <w:jc w:val="center"/>
+                <w:rPr>
+                    <w:sz w:val="48"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r wsp:rsidRPr="009F2CC8">
+                <w:rPr>
+                    <w:sz w:val="48"/>
+                </w:rPr>
+                <w:t>Release Notes</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00C835C2">
+                <w:rPr>
+                    <w:sz w:val="48"/>
+                </w:rPr>
+                <w:t> – phEnv</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="009F2CC8" wsp:rsidRDefault="009F2CC8"/>
+        <w:p wsp:rsidR="000E7286" wsp:rsidRDefault="009F2CC8">
+            <w:r>
+                <w:t>This is a dummy template to be used for Java2Word. It is a normal  W2003 XML but renamed to .doc</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00D84141">
+                <w:t>.</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="000E7286" wsp:rsidRDefault="000E7286">
+            <w:r wsp:rsidRPr="005B7C3D">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Project</w:t>
+            </w:r>
+            <w:r wsp:rsidR="009F190A" wsp:rsidRPr="005B7C3D">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t> Name</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00900844" wsp:rsidRPr="005B7C3D">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>:</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00900844">
+                <w:t> phProjectName</w:t>
+            </w:r>
+
+        </w:p>
+        <w:p wsp:rsidR="000E7286" wsp:rsidRDefault="00900844">
+            <w:r wsp:rsidRPr="005B7C3D">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Version:</w:t>
+            </w:r>
+            <w:r>
+                <w:t> phVersion</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="009F190A" wsp:rsidRDefault="009F190A">
+            <w:r wsp:rsidRPr="005B7C3D">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>Project Leader</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00900844" wsp:rsidRPr="005B7C3D">
+                <w:rPr>
+                    <w:b/>
+                </w:rPr>
+                <w:t>:</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00900844">
+                <w:t> phProjectLeader</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="00651FB8" wsp:rsidRDefault="00651FB8"/>
+        <w:p wsp:rsidR="00651FB8" wsp:rsidRPr="008A1CC9" wsp:rsidRDefault="00651FB8">
+            <w:pPr>
+                <w:rPr>
+                    <w:rFonts w:ascii="Century Gothic" w:h-ansi="Century Gothic"/>
+                    <wx:font wx:val="Century Gothic"/>
+                    <w:i/>
+                    <w:u w:val="single"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r wsp:rsidRPr="008A1CC9">
+                <w:rPr>
+                    <w:rFonts w:ascii="Century Gothic" w:h-ansi="Century Gothic"/>
+                    <wx:font wx:val="Century Gothic"/>
+                    <w:i/>
+                    <w:u w:val="single"/>
+                </w:rPr>
+                <w:t>Those are the JIRA issues</w:t>
+            </w:r>
+            <w:r wsp:rsidR="00DD25B7" wsp:rsidRPr="008A1CC9">
+                <w:rPr>
+                    <w:rFonts w:ascii="Century Gothic" w:h-ansi="Century Gothic"/>
+                    <wx:font wx:val="Century Gothic"/>
+                    <w:i/>
+                    <w:u w:val="single"/>
+                </w:rPr>
+                <w:t> in this version</w:t>
+            </w:r>
+            <w:r wsp:rsidRPr="008A1CC9">
+                <w:rPr>
+                    <w:rFonts w:ascii="Century Gothic" w:h-ansi="Century Gothic"/>
+                    <wx:font wx:val="Century Gothic"/>
+                    <w:i/>
+                    <w:u w:val="single"/>
+                </w:rPr>
+                <w:t>:</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="009B6103" wsp:rsidRDefault="00900844">
+            <w:r>
+                <w:t>phTableIssues</w:t>
+            </w:r>      
+        </w:p>
+        <w:p wsp:rsidR="009B6103" wsp:rsidRDefault="009B6103"/>
+        <w:p wsp:rsidR="00651FB8" wsp:rsidRPr="005D281E" wsp:rsidRDefault="005D281E" wsp:rsidP="005D281E">
+            <w:pPr>
+                <w:jc w:val="center"/>
+                <w:rPr>
+                    <w:b/>
+                    <w:u w:val="single"/>
+                </w:rPr>
+            </w:pPr>
+            <w:r wsp:rsidRPr="005D281E">
+                <w:rPr>
+                    <w:b/>
+                    <w:u w:val="single"/>
+                </w:rPr>
+                <w:t>Instructions:</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="00651FB8" wsp:rsidRDefault="005D281E">
+            <w:r>
+                <w:t>phInstructions</w:t>
+            </w:r>
+        </w:p>
+        <w:p wsp:rsidR="000E7286" wsp:rsidRDefault="000E7286"/>
+        <w:p wsp:rsidR="009F2CC8" wsp:rsidRDefault="009F2CC8"/>
+        <w:sectPr wsp:rsidR="009F2CC8" wsp:rsidSect="009F2CC8">
+            <w:hdr w:type="odd">
+                <w:p wsp:rsidR="009B6103" wsp:rsidRDefault="00AB36F0">
+                    <w:pPr>
+                        <w:pStyle w:val="Header"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>Company:</w:t>
+                    </w:r>      
+                    <w:r>
+                        <w:t> phCompanyName</w:t>
+                    </w:r>                                  
+                </w:p>
+            </w:hdr>
+            <w:ftr w:type="odd">
+                <w:p wsp:rsidR="009B6103" wsp:rsidRDefault="000F02FC">
+                    <w:pPr>
+                        <w:pStyle w:val="Footer"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>Date: phDateTime</w:t>
+                    </w:r>
+                </w:p>
+            </w:ftr>
+            <w:pgSz w:w="11900" w:h="16840"/>
+            <w:pgMar w:top="1440" w:right="1800" w:bottom="1440" w:left="1800" w:header="708" w:footer="708" w:gutter="0"/>
+            <w:cols w:space="708"/>
+        </w:sectPr>
+    </w:body>
+</w:wordDocument>
