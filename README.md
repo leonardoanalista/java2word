@@ -197,7 +197,7 @@ If you use maven, read the section "Java2Word with with Maven" below.
 
 At the moment, there is no Maven repository available for this jar. If you know any free place to publish the Jar file please let me know.
 
-If you follow steps in "Set up your Development Environment" and successfully build the project, you should have in your local ~/.m2 folder some jar like: ~/.m2/repository/java2word/java2word/3.x/java2word-3.x.jar.
+If you follow steps in "Set up your Development Environment" and successfully build the project, you should have in your local **~/.m2** folder some jar like: **~/.m2/repository/java2word/java2word/3.x/java2word-3.x.jar**.
 
 
 
@@ -218,12 +218,16 @@ Take a look at the Struts Example project. There is a readme file there with ste
 
 
 ##ALL-IN-ONE EXAMPLE - SEE EVERYTHING YOU CAN DO WITH JAVA2WORD.##
-TODO:
-Please check this page out. 
+
+Please check out this page:
+https://github.com/leonardoanalista/java2word/wiki/all-in-one-example
+
 
 ##SPECIAL CHARACTERS##
 
-http://java2word.blogspot.com/p/encoding-tips-and-tricks.html If there is a better way to do a replacement I am happy to hear about it.
+Please check out this page:
+https://github.com/leonardoanalista/java2word/wiki/Encoding-Tips-and-Tricks
+If there is a better way to do a replacement I am happy to hear about it.
 
 
 
@@ -231,33 +235,24 @@ http://java2word.blogspot.com/p/encoding-tips-and-tricks.html If there is a bett
 
 Lets imagine that you need some element that hasn't been implemented. Eg.: Bold text, Image, List...
 Take a look at this page:
-http://java2word.blogspot.com/p/how-to-implement-new-java2word-element.html
+https://github.com/leonardoanalista/java2word/wiki/how-to-implement-a-new-element
 
 
 
 ##TEMPLATES WITHJAVA2WORD (BETA)##
 
 I created a experimental solution for templates. Take a look at this page: 
-http://java2word.blogspot.com.au/p/ms-word-templates-with-java2word.html
+https://github.com/leonardoanalista/java2word/wiki/templates
 
 
 
-##I WANT TO HELPAND BECOME A COMMITTER##
+##I WANT TO HELPAND##
 * build the project
 * follow current pattern. Feel free to improve things. I wrote the code about 3 or 4 years ago, very late at night.
 * write unit tests, check coverage, cyclomatic complexity, pmd and findbugs.
 * test is in a real MS word document.
 * raise a pull request
 
-
-
-##I WANT TO SUGGESTSOMETHING##
-TODO: working on this
-
-
-
-##I WANT TO REPORT A BUG##
-TODO: working on this
 
 
 
@@ -283,6 +278,6 @@ There was a real world project needed. However I really wanted to practice TDD s
 
 
 _abraco a todos!_
-#Leonardo Correa#
+_Leonardo Correa_
 
 
