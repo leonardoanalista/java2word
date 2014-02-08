@@ -8,6 +8,10 @@ _Coding for fun - it has to be enjoyable._
 
 _* When I say no third part or external libraries, I mean there isn't any Microsoft library or special components. Please refer to "Dependencies" section below._
 
+project has been migrated from: 
+* https://code.google.com/p/java2word/
+* http://java2word.blogspot.com.au/
+
 
 ##WHEN TO USE JAVA2WORD##
 
@@ -263,16 +267,14 @@ I don't know how to host this in google code. The good thing is I commented in a
 TODO: link to a component library reference.
 
 
-##CURIOSITIES##
+####CURIOSITIES####
 
-There was a real world project needed. However I really wanted to practice TDD skills and apply all code quality tools in java. I decided to host the code at Google's SVN. I created the project and gave literally one line description just because field was required. After 5 days, one guy asked me about the documentation - I had to quickly add examples.
+There was a real world project needed. However I really wanted to practice TDD skills and apply all code quality tools in java back in 2009. I decided to host the code at Google's SVN. I created the project and gave literally one line description just because field was required. After 5 days, one guy asked me about the documentation - I had to quickly add examples.
 
-*I "forced" the usage some design patterns GOF (Strategy) just because I wanted to practice.
-*I (Leonardo) haven't used Windows since 2008.
-*I use Mac OS and Linux and currently don't have MS Word installed. I use VM and Word Viewer on Wine' 
-
-
-
+* I "forced" the usage some design patterns GOF (Strategy) just because I wanted to practice.
+* I haven't used Windows since 2008.
+* I use Mac OS and Linux and currently don't have MS Word installed. I use VM and Word Viewer on Wine' 
+* I am now a front-end developer. I don't have a lot of time to alocate to this library. Feel free to send a pull request and contribute.  
 
 
 
