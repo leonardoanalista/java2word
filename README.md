@@ -59,6 +59,16 @@ It is so painful to implement this in Jasper. In addition to that, it requires a
 * Too fancy word documents with rich format/style.
 
 
+##Questions on stackoverflow##
+
+For questions on how to use, set up or whatsoever, ask a question in stackoverflow:
+http://stackoverflow.com/questions/tagged/java2word
+
+Make sure you use the *java2word* tag.
+
+Let's leave github for issues and pull requests.
+
+
 
 ##JAVA2WORD IS SIMPLE LIKETHIS##
 
@@ -250,14 +260,12 @@ https://github.com/leonardoanalista/java2word/wiki/templates
 
 
 
-##I WANT TO HELPAND##
+##I WANT TO HELP##
 * build the project
 * follow current pattern. Feel free to improve things. I wrote the code about 3 or 4 years ago, very late at night.
 * write unit tests, check coverage, cyclomatic complexity, pmd and findbugs.
 * test is in a real MS word document.
 * raise a pull request
-
-
 
 
 ##JAVADOC##
