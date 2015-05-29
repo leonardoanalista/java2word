@@ -8,7 +8,7 @@ _Coding for fun - it has to be enjoyable._
 
 _* When I say no third part or external libraries, I mean there isn't any Microsoft library or special components. Please refer to "Dependencies" section below._
 
-project has been migrated from: 
+Project has been migrated from: 
 * https://code.google.com/p/java2word/
 * http://java2word.blogspot.com.au/
 
