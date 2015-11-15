@@ -261,6 +261,7 @@ https://github.com/leonardoanalista/java2word/wiki/templates
 
 
 ##I WANT TO HELP##
+* set up env: https://github.com/leonardoanalista/java2word/wiki/Set-up-your-Development-Environment
 * build the project
 * follow current pattern. Feel free to improve things. I wrote the code about 3 or 4 years ago, very late at night.
 * write unit tests, check coverage, cyclomatic complexity, pmd and findbugs.
