@@ -4,6 +4,8 @@ cache:
   directories:
 notifications:
   email: false
+before_install:
+  - pip install --user codecov
 before_script:
   - cd java2word
 script:
@@ -15,7 +17,7 @@ script:
   - ant javancss
   - ant checkstyle
 after_success:
-
+  - codecov
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
