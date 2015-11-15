@@ -70,7 +70,7 @@ Let's leave github for issues and pull requests.
 
 
 
-##JAVA2WORD IS SIMPLE LIKETHIS##
+##JAVA2WORD IS SIMPLE LIKE THIS##
 
 Here is the code snippets:
 
