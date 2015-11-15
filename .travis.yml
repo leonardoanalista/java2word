@@ -2,13 +2,18 @@ sudo: false
 language: java
 cache:
   directories:
-    - node_modules
 notifications:
   email: false
-before_install:
-  - mvn clean install
+before_script:
+  - cd java2word
 script:
-  - mvn test
+  - mvn clean install
+  - ant findbugs
+  - ant pmd
+  - ant cpd
+  - ant cobertura
+  - ant javancss
+  - ant checkstyle
 after_success:
 
 branches:
