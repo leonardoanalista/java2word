@@ -3,7 +3,9 @@
 
 The missing library to generate MS Word Documents from Java code without any special components.
 
-_Coding for fun - it has to be enjoyable._
+_Coding for fun_
+
+[![Build Status](https://travis-ci.org/leonardoanalista/java2word.svg)](https://travis-ci.org/leonardoanalista/java2word)
 
 
 _* When I say no third part or external libraries, I mean there isn't any Microsoft library or special components. Please refer to "Dependencies" section below._
