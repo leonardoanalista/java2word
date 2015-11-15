@@ -1,0 +1,16 @@
+sudo: false
+language: java
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+before_install:
+  - mvn clean install
+script:
+  - mvn test
+after_success:
+
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
