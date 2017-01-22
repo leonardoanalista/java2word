@@ -17,6 +17,16 @@ public class Table implements IElement {
                                                  // result for future
                                                  // invocations
     private boolean isRepeatTableHeaderOnEveryPage = false;
+    private int cols;
+    
+    public Table(int cols) {
+		this.cols = cols;
+	}
+    
+    public Table() {
+    	//DEFAULT 2 COLS, LIKE IN THE ORIGINAL
+    	this(2);
+    }
 
     public String getContent() {
         if ("".equals(txt.toString())) {
@@ -31,7 +41,7 @@ public class Table implements IElement {
         ITableItemStrategy tableDef = TableFactoryMethod.getInstance()
                 .getTableItem(TableEle.TABLE_DEF);
 
-        txt.insert(0, tableDef.getTop());
+        txt.insert(0, tableDef.getTop(cols));
         txt.append("\n" + tableDef.getBottom());
 
         return txt.toString();
@@ -63,9 +73,7 @@ public class Table implements IElement {
             ITableItemStrategy item = TableFactoryMethod.getInstance().getTableItem(tableEle);
 
             for (int i = 0; i < cols.length; i++) {
-                //if(!"".equals(cols[i])){
                 th.append("\n" + item.getMiddle().replace("{value}", cols[i]));
-                //}
             }
 
             joinTopMiddleBottom(th, item);

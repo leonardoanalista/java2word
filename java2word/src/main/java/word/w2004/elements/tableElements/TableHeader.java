@@ -44,5 +44,11 @@ public class TableHeader implements ITableItemStrategy{
 	public String getBottom() {
 		return "\n		</w:tr>";
 	}
+
+	@Override
+	public String getTop(int cols) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
