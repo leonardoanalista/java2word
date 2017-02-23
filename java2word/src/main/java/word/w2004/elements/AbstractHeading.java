@@ -3,6 +3,7 @@ package word.w2004.elements;
 import word.api.interfaces.IElement;
 import word.api.interfaces.IFluentElementStylable;
 import word.w2004.style.HeadingStyle;
+import word.w2004.style.HeadingStyle.Align;
 
 /**
  * @author leonardo
@@ -17,10 +18,17 @@ public abstract class AbstractHeading<E> implements IElement,  IFluentElementSty
      */
     private String headingType;
     private String value; //value/text for the Heading
-
+    
+    private HeadingStyle style = new HeadingStyle();
+    
     protected AbstractHeading(String headingType, String value){
+        this(headingType, value, Align.LEFT);
+    }
+
+    protected AbstractHeading(String headingType, String value, Align align){
         this.headingType = headingType;
         this.value = value;
+        style.align(align);
     }
 
     private String template =
@@ -34,8 +42,6 @@ public abstract class AbstractHeading<E> implements IElement,  IFluentElementSty
         +"\n		<w:t>{value}</w:t>"
         +"\n	</w:r>"
         +"\n</w:p>";
-
-    private HeadingStyle style = new HeadingStyle();
 
     @Override
     public String getContent() {

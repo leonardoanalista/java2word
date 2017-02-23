@@ -7,6 +7,7 @@ import word.api.interfaces.IElement;
 import word.api.interfaces.IFluentElement;
 import word.api.interfaces.IFluentElementStylable;
 import word.w2004.style.ParagraphStyle;
+import word.w2004.style.ParagraphStyle.Align;
 
 
 /**
@@ -37,6 +38,10 @@ public class Paragraph implements IElement, IFluentElement<Paragraph>, IFluentEl
      */
     public Paragraph(ParagraphPiece ... pieces) {
         this.pieces = pieces;
+    }
+    
+    private Paragraph(Align align) {
+    	this.style.align(align);
     }
 
     @Override
@@ -100,6 +105,18 @@ public class Paragraph implements IElement, IFluentElement<Paragraph>, IFluentEl
             //return null;
         //}
         Paragraph par = new Paragraph();
+        ParagraphPiece piece = ParagraphPiece.with(value);
+        par.pieces = new ParagraphPiece[1];
+        par.pieces[0] = piece;
+        return par;
+        //return new Paragraph(value);
+    }
+    
+    public static Paragraph with(String value, Align align) {
+        //if(value == null || "".equals(value)){
+            //return null;
+        //}
+        Paragraph par = new Paragraph(align);
         ParagraphPiece piece = ParagraphPiece.with(value);
         par.pieces = new ParagraphPiece[1];
         par.pieces[0] = piece;
