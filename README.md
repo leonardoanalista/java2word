@@ -205,7 +205,7 @@ public class reportCreator {
 
 * xstream-1.3.1.jar : Only if you use Image component in your doc (needed for Base64 encoding). 
 
-If you use maven, read the section "Java2Word with with Maven" below.
+If you use maven, read the section "Java2Word with Maven" below.
 
 
 
