@@ -13,9 +13,17 @@ public class TableRow implements IElement, IFluentElementStylable<TableRowStyle>
 	public TableRow(Object[] cols) {
         txt.append(tableRowTop);
 
-        for (int i = 0; i < cols.length; i++) {            
-        	//TableCell knows how to do the rest.
-        	txt.append( TableCell.with(cols[i]).create().getContent() );
+        for (int i = 0; i < cols.length; i++) {
+		Object col = cols[i];
+		TableCell cell;
+		if (col instanceof TableCell) {
+			//If col already TableCell
+			cell = (TableCell) col;
+		} else {
+			//TableCell knows how to do the rest.
+			cell = TableCell.with(col).create();
+		}
+		txt.append(cell.getContent());
         }
 		
         txt.append(tableRowBottom);
