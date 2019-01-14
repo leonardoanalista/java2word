@@ -288,6 +288,15 @@ There was a real world project needed. However I really wanted to practice TDD s
 * I am now a front-end developer. I don't have a lot of time to alocate to this library. Feel free to send a pull request and contribute.  
 
 
+## Roadmap:
+
+* fix CI unit tests
+* improve README, remove unnecessary code and comments
+* update deps to the latest
+* increase test code coverage
+* upgrade code examples for relevant frameworks. eg jboss seam, does anyone still use it?
+* [placeholder, please add it here]
+
 
 _abraco a todos!_
 _Leonardo Correa_
