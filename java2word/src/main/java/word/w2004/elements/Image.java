@@ -75,6 +75,19 @@ public class Image implements IImage, IFluentElement<Image> {
             String[] wh = getOriginalWidthHeight().split("#");
             String ww = wh[0];
             String hh = wh[1];
+            try {
+            	int h = Integer.valueOf(hh);
+            	int w = Integer.valueOf(ww);
+            	if (w > 460) {
+            		double factor = w / 460.0;
+            		h = (int) (h / factor);
+            		w = (int) (w / factor);
+            	}
+            	ww = String.valueOf(w);
+            	hh = String.valueOf(h);
+            } catch (Exception e) {
+				e.printStackTrace();
+			}
             if ("".equals(width)) {
                 width = ww;
             }
@@ -130,24 +143,24 @@ public class Image implements IImage, IFluentElement<Image> {
     }
 
     private String img_template = "\n<w:pict>"
-            + "\n	<v:shapetype id=\"_x0000_t75\" coordsize=\"21600,21600\" o:spt=\"75\" o:preferrelative=\"t\" path=\"m@4@5l@4@11@9@11@9@5xe\" filled=\"f\" stroked=\"f\">"
-            + "		<v:stroke joinstyle=\"miter\"/>"
-            + "		<v:formulas>"
-            + "			<v:f eqn=\"if lineDrawn pixelLineWidth 0\"/>"
-            + "			<v:f eqn=\"sum @0 1 0\"/><v:f eqn=\"sum 0 0 @1\"/>"
-            + "			<v:f eqn=\"prod @2 1 2\"/>"
-            + "			<v:f eqn=\"prod @3 21600 pixelWidth\"/>"
-            + "			<v:f eqn=\"prod @3 21600 pixelHeight\"/>"
-            + "			<v:f eqn=\"sum @0 0 1\"/>"
-            + "			<v:f eqn=\"prod @6 1 2\"/>"
-            + "			<v:f eqn=\"prod @7 21600 pixelWidth\"/>"
-            + "			<v:f eqn=\"sum @8 21600 0\"/>"
-            + "			<v:f eqn=\"prod @7 21600 pixelHeight\"/>"
-            + "			<v:f eqn=\"sum @10 21600 0\"/>"
-            + "		</v:formulas>"
-            + "		<v:path o:extrusionok=\"f\" gradientshapeok=\"t\" o:connecttype=\"rect\"/>"
-            + "		<o:lock v:ext=\"edit\" aspectratio=\"t\"/>"
-            + "	</v:shapetype>"
+//            + "\n	<v:shapetype id=\"_x0000_t75\" coordsize=\"21600,21600\" o:spt=\"75\" o:preferrelative=\"t\" path=\"m@4@5l@4@11@9@11@9@5xe\" filled=\"f\" stroked=\"f\">"
+//            + "		<v:stroke joinstyle=\"miter\"/>"
+//            + "		<v:formulas>"
+//            + "			<v:f eqn=\"if lineDrawn pixelLineWidth 0\"/>"
+//            + "			<v:f eqn=\"sum @0 1 0\"/><v:f eqn=\"sum 0 0 @1\"/>"
+//            + "			<v:f eqn=\"prod @2 1 2\"/>"
+//            + "			<v:f eqn=\"prod @3 21600 pixelWidth\"/>"
+//            + "			<v:f eqn=\"prod @3 21600 pixelHeight\"/>"
+//            + "			<v:f eqn=\"sum @0 0 1\"/>"
+//            + "			<v:f eqn=\"prod @6 1 2\"/>"
+//            + "			<v:f eqn=\"prod @7 21600 pixelWidth\"/>"
+//            + "			<v:f eqn=\"sum @8 21600 0\"/>"
+//            + "			<v:f eqn=\"prod @7 21600 pixelHeight\"/>"
+//            + "			<v:f eqn=\"sum @10 21600 0\"/>"
+//            + "		</v:formulas>"
+//            + "		<v:path o:extrusionok=\"f\" gradientshapeok=\"t\" o:connecttype=\"rect\"/>"
+//            + "		<o:lock v:ext=\"edit\" aspectratio=\"t\"/>"
+//            + "	</v:shapetype>"
             + "\n<w:binData w:name=\"wordml://{internalFileName}\" xml:space=\"preserve\">{binary}</w:binData>"
             + "\n	<v:shape id=\"_x0000_i1026\" type=\"#_x0000_t75\" style=\"width:{width}pt;height:{height}pt\"><v:imagedata src=\"wordml://{internalFileName}\" o:title=\"{fileName}\"/>"
             + "\n	</v:shape>" + "\n</w:pict>";

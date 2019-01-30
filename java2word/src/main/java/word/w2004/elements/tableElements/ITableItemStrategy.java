@@ -7,6 +7,7 @@ package word.w2004.elements.tableElements;
  */
 public interface ITableItemStrategy{
 	public String getTop();
+	public String getTop(int cols);
 	public String getMiddle();
 	public String getBottom();
 }

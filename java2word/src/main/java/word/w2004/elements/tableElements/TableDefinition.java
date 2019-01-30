@@ -8,7 +8,8 @@ package word.w2004.elements.tableElements;
  */
 public class TableDefinition implements ITableItemStrategy{
 
-	public String getTop() {
+	@Override
+	public String getTop(int cols) {
 		String top = 
 			 "\n	<w:tbl> "
 			+"\n            <w:tblPr> "
@@ -23,20 +24,33 @@ public class TableDefinition implements ITableItemStrategy{
 			+"\n                </w:tblBorders> "
 			+"\n                <w:tblLook w:val=\"00BF\"/> "
 			+"\n            </w:tblPr> "
-			+"\n            <w:tblGrid> "
-			+"\n                <w:gridCol w:w=\"4258\"/> "
-			+"\n                <w:gridCol w:w=\"4258\"/> "
-			+"\n            </w:tblGrid> "
 			;
+		top += getTblGrid(cols);
 		return top;
 	}
 
-	public String getMiddle() {
-		return null; // N/A
+	private String getTblGrid(int cols) {
+		String tblGrid = 
+			 "\n			<w:tblGrid> ";
+		for (int i = 0; i < cols; i++) {
+			tblGrid += "\n				<w:gridCol w:w=\"4258\"/> ";
+		}
+		tblGrid += "\n			</w:tblGrid> ";
+		return tblGrid;
 	}
 
-
+	@Override
 	public String getBottom() {
 		return "\n	</w:tbl>";
+	}
+
+	@Override
+	public String getMiddle() {
+		return null;
+	}
+
+	@Override
+	public String getTop() {
+		return null;
 	}
 }
